@@ -1,5 +1,19 @@
-var numbers = [1, 2, 3, 4, 5]
+function includesText(text, baseText) {
+    if (typeof text === 'string' && typeof baseText === 'string') {
+        var textUpperCase = text.toUpperCase()
+        var baseTextUpperCase = baseText.toUpperCase()
+        if (baseTextUpperCase.indexOf(textUpperCase) !== -1) {
+            return true
+        } else {
+            return false
+        }
+    } else {
+        return false
+    }
+}
 
 
-
-deleteElement(2, 1) // Devuelve un nuevo Array [1,2,4,5]
+console.log(includesText('Pa', 'Patricia'))
+console.log(includesText('pa', 'Patricia'))
+console.log(includesText('Patricia', 'Pa'))
+console.log(includesText(2, 'Pa'))
