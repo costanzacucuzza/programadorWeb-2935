@@ -1,9 +1,9 @@
-var oldStudent = [{
+var student = {
     firstName: 'Juan',
     lastName: 'Pérez',
     dni: 45678987,
     email: 'juan@gmail.com'
-}]
+}
 
 function Student(firstName, lastName, dni, email) {
     var id = dni
@@ -21,13 +21,22 @@ function Student(firstName, lastName, dni, email) {
     }
 }
 
+var newStudent = new Student(
+    student.firstName,
+    student.lastName,
+    student.dni,
+    student.email
+)
 
 function createStudentNode(newStudent) {
-    newStudents = document.createElement('li')
-    newStudents.className = 'list-group-item'
-    newStudents.id = newStudents.getId()
-    newStudents.innerHTML = '<h1>' + firstName + '</h1>'
-    console.log(newStudents)
+    var nodeLi = document.createElement('li')
+    nodeLi.className = 'list-group-item'
+    nodeLi.id = newStudent.getId()
+    nodeLi.innerHTML =
+        '<h1>' + newStudent.getFullName() + '</h1><h3>DNI:' + newStudent.dni + '</h3><p>E-mail:' + newStudent.email + '</p>'
+    return nodeLi
 }
 
 var studentNode = createStudentNode(newStudent)
+
+console.log(studentNode)
